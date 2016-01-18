@@ -1,16 +1,12 @@
 package object_algebras;
 
 public class Main {
-	<A> A exp2(IntAlg<A> v){
-		return v.add(v.add(v.lit(100), v.lit(1)),v.lit(99));
-	}
-
-	<A> A exp(IntAlg<A> v){
+	public <A> A exp(IntAlg<A> v){
 		return v.add(v.lit(3), v.lit(4));
 	}
 
-	public void check(int x, String s){
-
+	public <A> A exp2(IntAlg<A> v){
+		return v.add(v.add(v.lit(100), v.lit(1)),v.lit(99));
 	}
 
 	public void test(){

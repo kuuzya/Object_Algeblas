@@ -3,6 +3,7 @@ package object_algebras;
 interface Value {
 	int getInt();
 }
+
 class VInt implements Value{
 	int x;
 	public VInt(int x) {
@@ -12,11 +13,12 @@ class VInt implements Value{
 	public int getInt() {
 		return x;
 	}
-
 }
+
 interface Exp {
 	Value eval();
 }
+
 class Lit implements Exp {
 	int x;
 	public Lit(int x) { this.x = x; }
@@ -24,6 +26,7 @@ class Lit implements Exp {
 		return new VInt(x);
 	}
 }
+
 class Add implements Exp {
 	Exp l, r;
 	public Add(Exp l, Exp r) { this.l = l; this.r = r; }
