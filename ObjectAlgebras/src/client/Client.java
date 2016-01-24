@@ -15,32 +15,32 @@ import multidiv.MultiDivStringFactory;
 
 public class Client {
 	public void test(){
-		StringFactory sf = new StringFactory();
-		ExpFactory ef = new ExpFactory();
+		StringFactory sf = new StringFactory(){};
+		ExpFactory ef = new ExpFactory(){};
 
 		System.out.println(basicExp(sf));
 		System.out.println(basicExp(ef).eval().getInt());
 		System.out.println(basicExp2(sf));
 		System.out.println(basicExp2(ef).eval().getInt());
 
-		AddSubStringFactory assf = new AddSubStringFactory();
-		AddSubExpFactory asef = new AddSubExpFactory();
+		AddSubStringFactory assf = new AddSubStringFactory(){};
+		AddSubExpFactory asef = new AddSubExpFactory(){};
 
 		System.out.println(addSubExp(assf));
 		System.out.println(addSubExp(asef).eval().getInt());
 		System.out.println(addSubExp2(assf));
 		System.out.println(addSubExp2(asef).eval().getInt());
 
-		MultiDivStringFactory mdsf = new MultiDivStringFactory();
-		MultiDivExpFactory mdef = new MultiDivExpFactory();
+		MultiDivStringFactory mdsf = new MultiDivStringFactory(){};
+		MultiDivExpFactory mdef = new MultiDivExpFactory(){};
 
 		System.out.println(multiDivExp(mdsf));
 		System.out.println(multiDivExp(mdef).eval().getInt());
 		System.out.println(multiDivExp2(mdsf));
 		System.out.println(multiDivExp2(mdef).eval().getInt());
 
-		FourOperationStringFactory fosf = new FourOperationStringFactory();
-		FourOperationExpFactory foef = new FourOperationExpFactory();
+		FourOperationStringFactory fosf = new FourOperationStringFactory(){};
+		FourOperationExpFactory foef = new FourOperationExpFactory(){};
 
 		System.out.println(fourOperationExp(fosf));
 		System.out.println(fourOperationExp(foef).eval().getInt());

@@ -1,13 +1,13 @@
 package basic;
 
-public class StringFactory implements BasicAlg<String> {
+public interface StringFactory extends BasicAlg<String> {
 	@Override
-	public String lit(int x) {
+	 public default String lit(int x) {
 		return new Integer(x).toString();
 	}
 
 	@Override
-	public String zero() {
+	public default String zero() {
 		return new Integer(0).toString();
 	}
 

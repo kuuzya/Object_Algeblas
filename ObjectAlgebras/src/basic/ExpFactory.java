@@ -1,13 +1,13 @@
 package basic;
 
-public class ExpFactory implements BasicAlg<Exp> {
+public interface ExpFactory extends BasicAlg<Exp> {
 	@Override
-	public Exp lit(int x) {
+	default Exp lit(int x) {
 		return new Lit(x);
 	}
 
 	@Override
-	public Exp zero() {
+	default Exp zero() {
 		return new Zero();
 	}
 

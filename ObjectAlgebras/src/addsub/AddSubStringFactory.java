@@ -2,15 +2,15 @@ package addsub;
 
 import basic.StringFactory;
 
-public class AddSubStringFactory extends StringFactory implements AddSubAlg<String> {
+public interface AddSubStringFactory extends StringFactory, AddSubAlg<String> {
 
 	@Override
-	public String add(String e1, String e2) {
+	public default String add(String e1, String e2) {
 		return e1 + " + " + e2;
 	}
 
 	@Override
-	public String sub(String e1, String e2) {
+	public default String sub(String e1, String e2) {
 		return e1 + " - " + e2;
 	}
 
