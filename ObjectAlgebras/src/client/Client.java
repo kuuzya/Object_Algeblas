@@ -6,6 +6,9 @@ import addsub.AddSubStringFactory;
 import basic.BasicAlg;
 import basic.ExpFactory;
 import basic.StringFactory;
+import fouroperation.FourOperationAlg;
+import fouroperation.FourOperationExpFactory;
+import fouroperation.FourOperationStringFactory;
 import multidiv.MultiDivAlg;
 import multidiv.MultiDivExpFactory;
 import multidiv.MultiDivStringFactory;
@@ -35,6 +38,15 @@ public class Client {
 		System.out.println(multiDivExp(mdef).eval().getInt());
 		System.out.println(multiDivExp2(mdsf));
 		System.out.println(multiDivExp2(mdef).eval().getInt());
+
+		FourOperationStringFactory fosf = new FourOperationStringFactory();
+		FourOperationExpFactory foef = new FourOperationExpFactory();
+
+		System.out.println(fourOperationExp(fosf));
+		System.out.println(fourOperationExp(foef).eval().getInt());
+		System.out.println(fourOperationExp2(fosf));
+		System.out.println(fourOperationExp2(foef).eval().getInt());
+
 	}
 
 	//3
@@ -67,6 +79,24 @@ public class Client {
 		return v.div(v.lit(24), v.div(v.multi(v.lit(3), v.lit(4)), v.lit(2)));
 	}
 
+	//(5*(12+4))
+	public <A> A fourOperationExp(FourOperationAlg<A> v){
+		return v.multi(v.lit(5),v.add(v.lit(12),v.lit(4)));
+	}
+
+	//(5+((16-4)/6))*4
+	public <A> A fourOperationExp2(FourOperationAlg<A> v){
+		return v.multi(
+				v.add(
+						v.lit(5),
+						v.div(
+								v.sub(v.lit(16),	v.lit(4)),
+								v.lit(6)
+								)
+						),
+				v.lit(4)
+				);
+	}
 
 	public static void main(String[] args){
 		Client c = new Client();
