@@ -9,7 +9,7 @@ public class Lit implements Exp {
 
 	@Override
 	public Value eval() {
-		return new VInt(x);
+		return () -> x;
 	}
 
 }

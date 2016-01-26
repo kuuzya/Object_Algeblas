@@ -1,6 +1,5 @@
 package basic;
 
-public interface BasicAlg<A> {
-	A lit(int x);
-	A zero();
+public interface BasicAlg<A> extends LitAlg<A>, ZeroAlg<A> {
+
 }
