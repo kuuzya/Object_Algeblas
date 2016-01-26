@@ -13,12 +13,7 @@ public class Add implements Exp {
 
 	@Override
 	public Value eval() {
-		return new Value(){
-			@Override
-			public int getInt() {
-				return e1.eval().getInt() + e2.eval().getInt();
-			}
-		};
+		return () -> e1.eval().getInt() + e2.eval().getInt();
 	}
 
 }
