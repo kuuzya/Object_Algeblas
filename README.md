@@ -1,3 +1,3 @@
-# Object_Algeblas
+# Object_Algebras
 
-Practice of Object Algeblas
+Practice of Object Algebras
